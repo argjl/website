@@ -16,15 +16,20 @@ export default {
   {
     "renderMode": 2,
     "route": "/website-development"
+  },
+  {
+    "renderMode": 2,
+    "route": "/privacy"
   }
 ],
   entryPointToBrowserMapping: undefined,
   assets: {
-    'index.csr.html': {size: 2537, hash: '775c678b55874fca17c65a4d9663d7c83bf2977619b9bc5585d8f1f6997c15bf', text: () => import('./assets-chunks/index_csr_html.mjs').then(m => m.default)},
-    'index.server.html': {size: 952, hash: '10a78d838b52c6dc482b7c4c6fa9c7b0b3a39168dc093c42f365d1711e0013fb', text: () => import('./assets-chunks/index_server_html.mjs').then(m => m.default)},
-    'index.html': {size: 12976, hash: '88fe7b3b71e9012c0ffbcb733418427c43c5a69178ae78e939f30d556c6d9e20', text: () => import('./assets-chunks/index_html.mjs').then(m => m.default)},
-    'lead-automation/index.html': {size: 20514, hash: 'fe3d0684a4feb6e0f920b8302a72fa5d3e83eaa2e71a0845334ed7a977c34710', text: () => import('./assets-chunks/lead-automation_index_html.mjs').then(m => m.default)},
-    'website-development/index.html': {size: 11945, hash: '2499a5c71f1555d2173905d6f69fb102fbe506a70e610fe699290975bf38c7be', text: () => import('./assets-chunks/website-development_index_html.mjs').then(m => m.default)},
+    'index.csr.html': {size: 2537, hash: 'c17a4d112ded6132c804761b11c6bd7e6cb7f412079277294a1077ca74d36385', text: () => import('./assets-chunks/index_csr_html.mjs').then(m => m.default)},
+    'index.server.html': {size: 952, hash: 'e74edf2081d4ab651ca72c2e3e99d4b2af6f595c2673cbd0cb88cd00ae46eb4c', text: () => import('./assets-chunks/index_server_html.mjs').then(m => m.default)},
+    'website-development/index.html': {size: 11900, hash: 'eb9d684a5127b5af6d082eef33eec110de625e319454ad9a722829207f2838dd', text: () => import('./assets-chunks/website-development_index_html.mjs').then(m => m.default)},
+    'index.html': {size: 13073, hash: 'c72c2087e5c84708312cf5d8b61d9bba3930877462cf380ca45b9cfcc5b8783e', text: () => import('./assets-chunks/index_html.mjs').then(m => m.default)},
+    'privacy/index.html': {size: 4111, hash: '23bbd9610361cd986a71c48a2fc24a5f3c75413aa84c449447036e011702069f', text: () => import('./assets-chunks/privacy_index_html.mjs').then(m => m.default)},
+    'lead-automation/index.html': {size: 20514, hash: '7fc9aff373d4f00187be6a8edcf9eb793f6d551d6c244f9a210c8fbf42b67bf2', text: () => import('./assets-chunks/lead-automation_index_html.mjs').then(m => m.default)},
     'styles-H6FRPQ4R.css': {size: 4227, hash: 'MAZm0oBsH/I', text: () => import('./assets-chunks/styles-H6FRPQ4R_css.mjs').then(m => m.default)}
   },
 };

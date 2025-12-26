@@ -2,6 +2,7 @@
   "routes": {
     "/": {},
     "/lead-automation": {},
+    "/privacy": {},
     "/website-development": {}
   }
 }
