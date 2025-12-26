@@ -1,0 +1,68 @@
+<div *ngIf="successMessage" class="contact-form__success">
+  Thank you! Your message has been received. We'll get back to you soon.
+</div>
+
+<form [formGroup]="form" (ngSubmit)="submit()" class="contact-form">
+  <div class="contact-form__group">
+    <label for="name" class="contact-form__label">Name</label>
+    <input 
+      id="name"
+      type="text" 
+      formControlName="name" 
+      class="contact-form__input"
+      placeholder="Your full name"
+      required
+    >
+    <span *ngIf="form.get('name')?.invalid && form.get('name')?.touched" class="contact-form__error">
+      Name is required
+    </span>
+  </div>
+  <div class="contact-form__group">
+    <label for="phone" class="contact-form__label">Phone Number</label>
+    <input 
+      id="phone"
+      type="number" 
+      formControlName="phone" 
+      class="contact-form__input"
+      placeholder="Phone Number"
+      required
+    >
+     <span *ngIf="form.get('phone')?.invalid && form.get('phone')?.touched" class="contact-form__error">
+      <span *ngIf="form.get('phone')?.errors?.['required']">Phone Number is required</span>
+        <span *ngIf="form.get('phone')?.errors?.['pattern']">Please enter a valid phone number</span>
+    </span>
+  </div>
+
+  <div class="contact-form__group">
+    <label for="email" class="contact-form__label">Email</label>
+    <input 
+      id="email"
+      type="email" 
+      formControlName="email" 
+      class="contact-form__input"
+      placeholder="your.email@example.com"
+    >
+
+    <span *ngIf="form.get('email')?.invalid && form.get('email')?.touched" class="contact-form__error">
+      <span *ngIf="form.get('email')?.errors?.['email']">Please enter a valid email</span>
+    </span>
+  </div>
+
+  <div class="contact-form__group">
+    <label for="message" class="contact-form__label">Message</label>
+    <textarea 
+      id="message"
+      formControlName="message" 
+      class="contact-form__textarea"
+      placeholder="Tell us about your project..."
+      required
+    ></textarea>
+    <span *ngIf="form.get('message')?.invalid && form.get('message')?.touched" class="contact-form__error">
+      Message is required
+    </span>
+  </div>
+
+  <button type="submit" class="contact-form__submit" [disabled]="form.invalid">
+    Send Message
+  </button>
+</form>

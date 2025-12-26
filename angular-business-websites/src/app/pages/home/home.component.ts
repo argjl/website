@@ -1,0 +1,14 @@
+import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
+import { ContactFormComponent } from '../../components/contact-form/contact-form.component';
+
+
+@Component({
+  selector: 'app-home',
+  imports: [CommonModule, ContactFormComponent],
+  templateUrl: './home.component.html',
+  styleUrl: './home.component.scss',
+})
+export class HomeComponent {
+
+}

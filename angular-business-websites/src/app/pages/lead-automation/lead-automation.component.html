@@ -1,0 +1,109 @@
+<!-- Hero Section -->
+<section class="hero">
+  <div class="container">
+    <h1>Lead Automation with n8n</h1>
+    <p>Never lose a lead again. Automatically capture, qualify, and nurture leads 24/7</p>
+    <a href="#features" class="cta-button">Learn How It Works</a>
+  </div>
+</section>
+
+<!-- Process Section -->
+<section class="section process-section">
+  <div class="container">
+    <h2 class="text-center">How Lead Automation Works</h2>
+    <div class="process-flow">
+      <div *ngFor="let step of processSteps" class="process-step">
+        <div class="step-number">{{ step.step }}</div>
+        <h3>{{ step.title }}</h3>
+        <p>{{ step.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Features Section -->
+<section id="features" class="section features-section">
+  <div class="container">
+    <h2 class="text-center">Automation Workflows</h2>
+    <div class="workflows-grid">
+      <div *ngFor="let workflow of automationWorkflows" class="workflow-card">
+        <div class="workflow-icon">{{ workflow.icon }}</div>
+        <h3>{{ workflow.title }}</h3>
+        <p>{{ workflow.description }}</p>
+        <ul class="workflow-details">
+          <li *ngFor="let detail of workflow.details">{{ detail }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Benefits Section -->
+<section class="section benefits-section">
+  <div class="container">
+    <h2 class="text-center">Why Choose Lead Automation?</h2>
+    <div class="benefits-grid">
+      <div *ngFor="let benefit of benefits" class="benefit-card">
+        <h3>{{ benefit.title }}</h3>
+        <p>{{ benefit.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Use Cases Section -->
+<section class="section use-cases-section">
+  <div class="container">
+    <h2 class="text-center">Real-World Examples</h2>
+    <div class="use-cases-grid">
+      <div class="use-case-card">
+        <h3>SaaS Company</h3>
+        <p>Automatically qualify website visitors, score them based on engagement, and send to sales only when ready to buy.</p>
+        <strong>Result: 40% faster sales cycle</strong>
+      </div>
+      <div class="use-case-card">
+        <h3>Digital Agency</h3>
+        <p>Capture form submissions, send instant proposals with personalized pricing, and track engagement automatically.</p>
+        <strong>Result: 3x more proposals sent</strong>
+      </div>
+      <div class="use-case-card">
+        <h3>E-commerce Business</h3>
+        <p>Send abandoned cart reminders, product recommendations, and flash sale notifications automatically.</p>
+        <strong>Result: 25% increase in repeat sales</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats Section -->
+<section class="section stats-section">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat">
+        <h3>80%</h3>
+        <p>Time saved on manual tasks</p>
+      </div>
+      <div class="stat">
+        <h3>24/7</h3>
+        <p>Automatic lead capture</p>
+      </div>
+      <div class="stat">
+        <h3>10x</h3>
+        <p>Faster lead response</p>
+      </div>
+      <div class="stat">
+        <h3>∞</h3>
+        <p>Scalable workflows</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="section cta-section">
+  <div class="container">
+    <h2>Ready to Automate Your Leads?</h2>
+    <p>Let us set up custom n8n workflows for your business</p>
+    <a href="#contact" class="cta-button-large">Get Started Today</a>
+  </div>
+</section>
