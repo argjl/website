@@ -1,5 +1,8 @@
 <div *ngIf="successMessage" class="contact-form__success">
-  Thank you! Your message has been received. We'll get back to you soon.
+  {{ successMessage }}
+</div>
+<div *ngIf="errorMessage" class="contact-form__error">
+  {{ errorMessage }}
 </div>
 
 <form [formGroup]="form" (ngSubmit)="submit()" class="contact-form">
@@ -21,7 +24,7 @@
     <label for="phone" class="contact-form__label">Phone Number</label>
     <input 
       id="phone"
-      type="number" 
+      type="text" 
       formControlName="phone" 
       class="contact-form__input"
       placeholder="Phone Number"

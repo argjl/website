@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
+import { email } from '@angular/forms/signals';
 
 @Component({
   selector: 'app-contact-form',
@@ -11,7 +12,8 @@ import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
 })
 export class ContactFormComponent {
   form;
-  successMessage = false;
+  successMessage = '';
+  errorMessage = '';
 
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
@@ -22,37 +24,48 @@ export class ContactFormComponent {
     });
   }
 
-  submit() {
+  async submit() {
     if (this.form.valid) {
-      const formData = this.form.value;
-      
-      // Get existing submissions from local storage
-      let submissions = JSON.parse(localStorage.getItem('contactSubmissions') || '[]');
-      
-      // Add timestamp to the submission
-      const submission = {
-        ...formData,
-        timestamp: new Date().toISOString()
+      const formData = {
+        ...this.form.value,
+        source: "Website",
+        date: new Date().toISOString()
       };
-      
-      // Add new submission to array
-      submissions.push(submission);
-      
-      // Save back to local storage
-      localStorage.setItem('contactSubmissions', JSON.stringify(submissions));
-      
-      // Show success message
-      this.successMessage = true;
-      
-      // Clear success message after 3 seconds
+
+      // Prod URL
+      try {
+        const res = await fetch("https://n8n-latest-ul7q.onrender.com/webhook/d380aa10-208e-4f78-a8f0-c311a70501cf", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData)
+        });
+
+        // Stage url
+      // try {
+      //   const res = await fetch("https://n8n-latest-ul7q.onrender.com/webhook-test/d380aa10-208e-4f78-a8f0-c311a70501cf", {
+      //     method: "POST",
+      //     headers: { "Content-Type": "application/json" },
+      //     body: JSON.stringify(formData)
+      //   });
+
+        if (res.ok) {
+          this.successMessage = "Thanks! We will contact you shortly.";
+          this.errorMessage = '';
+          this.form.reset();
+        } else {
+          this.errorMessage = "Something went wrong.";
+          this.successMessage = '';
+        }
+      } catch {
+        this.errorMessage = "Network error.";
+        this.successMessage = '';
+      }
+
+      // Clear messages after 3 seconds
       setTimeout(() => {
-        this.successMessage = false;
+        this.successMessage = '';
+        this.errorMessage = '';
       }, 3000);
-      
-      // Reset form
-      this.form.reset();
-      
-      console.log('Form submitted and saved!', submission);
     }
   }
 }
