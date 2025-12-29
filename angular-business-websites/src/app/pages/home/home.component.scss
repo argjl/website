@@ -1,3 +1,29 @@
+// Header Section
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--color-bg-primary);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  box-shadow: var(--shadow-sm);
+  z-index: 1000;
+
+  .logo {
+    text-decoration: none;
+    font-size: var(--font-size-lg);
+    font-weight: bold;
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+
+    span {
+      margin-right: var(--spacing-sm);
+      font-size: 1.5rem; // Adjust size for the icon or logo
+    }
+  }
+}
+
 // Hero Section
 .hero {
   background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
@@ -90,4 +116,67 @@
     text-align: center;
     margin-bottom: var(--spacing-2xl);
   }
+
+  .whatsapp-icon {
+    position: fixed; // Make it fixed to stay in the top-right corner
+    top: var(--spacing-lg); // Adjust the top spacing
+    right: var(--spacing-lg); // Adjust the right spacing
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px; // Slightly larger size for better visibility
+    height: 60px;
+    background-color: #25d366; // WhatsApp green color
+    border-radius: 50%;
+    color: white;
+    font-size: 2rem; // Larger icon size
+    text-decoration: none;
+    z-index: 1100; // Ensure it appears above other elements
+    box-shadow: var(--shadow-md);
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+
+    &:hover {
+      transform: scale(1.1);
+      box-shadow: var(--shadow-lg);
+    }
+  }
+}
+
+// Footer Section
+footer {
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text-inverse);
+  padding: var(--spacing-lg) var(--spacing-xl);
+  text-align: center;
+
+  a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: bold;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  p {
+    margin: 0;
+    margin-bottom: var(--spacing-sm);
+    font-size: var(--font-size-sm);
+  }
+
+  .copyright {
+    font-size: var(--font-size-sm);
+    margin-top: var(--spacing-sm);
+    color: var(--color-text-secondary);
+  }
+}
+
+// Add copyright text
+footer::after {
+  content: "© 2023 Ganesh. All rights reserved.";
+  display: block;
+  margin-top: var(--spacing-md);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
 }
