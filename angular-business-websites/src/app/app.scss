@@ -5,3 +5,35 @@
 app-contact-form {
   display: block;
 }
+
+.header {
+  height: 64px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  position: relative;
+  z-index: 100;
+}
+
+/* Logo */
+.logo {
+  height: 42px;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+/* WhatsApp icon */
+.whatsapp-icon {
+  font-size: 28px;
+  color: #25d366;
+  cursor: pointer;
+}
+
+/* Hover effect */
+.whatsapp-icon:hover {
+  transform: scale(1.1);
+  transition: 0.2s ease;
+}
